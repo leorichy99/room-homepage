@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Epilogue:wght@500;700&family=Inter:wght@300;500;700&family=Josefin+Sans:wght@300;400;600&family=Kumbh+Sans:wght@400;700&family=League+Spartan:wght@500;600;700&family=Libre+Franklin:wght@300;600;700&family=Manrope:wght@500;700&family=Plus+Jakarta+Sans&family=Rubik:wght@300&display=swap');
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Dark-gray: hsl(0, 0%, 63%);
+  --Black: hsl(0, 0%, 0%);
+  --White: hsl(0, 0%, 100%);
+  --Very-dark-gray: hsl(0, 0%, 27%);
+}
+
+.d-flex {
+  display: flex;
+  align-items: center;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  font-size: 17px;
+  color: var(--Dark-gray);
+  line-height: 1.4rem;
+  font-weight: 500;
+}
+
+.nav_links li a,
+.image_slides,
+.info_slides,
+.image_slides,
+.hamburger_nav li a {
+  position: relative;
+}
+
+.shop_now h2,
+.about_info h2 {
+  letter-spacing: 0.4rem;
+}
+
+.shop_now svg,
+.slide_navigator,
+.menu-toggle{
+  cursor: pointer;
+}
+
+.shop_now,
+svg path,
+*::after,
+.arrow,
+.image_slides,
+.hamburger_menu,
+.menu-toggle,
+img,
+a{
+  transition: 0.5s ease;
+  -webkit-transition: .5s ease;
+  -moz-transition: .5s ease;
+  -o-transition: .5s ease;
+}
+
+.hamburger_menu,
+.hamburger_icon,
+.dummy_div {
+  display: none;
+}
+
+img{
+  object-fit: cover;
+}
+
+/* -------------------------------- */
+body{
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  font-family: "League Spartan", sans-serif;
+}
+
+.container {
+  width: 100%;
+  min-height: 100%;
+}
+
+/* showcase */
+.showcase {
+  width: 100%;
+  height: 630px;
+  align-items: stretch;
+}
+
+.image_slides {
+  width: 60%;
+  height: 630px;
+  background: url("./images/desktop-image-hero-1.jpg") center center / cover
+    no-repeat;
+}
+
+nav {
+  margin: 50px 0 0 50px;
+}
+
+.nav_links,
+.hamburger_nav {
+  margin-left: 50px;
+}
+
+.nav_links li,
+.hamburger_nav li {
+  margin-left: 25px;
+}
+
+.nav_links li a,
+.hamburger_nav li a {
+  color: var(--White);
+}
+
+.nav_links li a::after,
+.hamburger_nav li a::after {
+  position: absolute;
+  content: "";
+  width: 0%;
+  height: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--White);
+  bottom: -5px;
+  opacity: 0;
+}
+
+.hamburger_nav li a::after {
+  background: var(--Black);
+}
+
+.nav_links li:hover a::after,
+.hamburger_nav li:hover a::after {
+  width: 50%;
+  opacity: 1;
+}
+
+.info_slides {
+  width: 40%;
+  height: 100%;
+  padding: 150px 100px;
+}
+
+.info_slides p {
+  margin: 50px 0;
+}
+
+.info_slides h1 {
+  font-size: 2.5rem;
+  max-width: 400px;
+}
+
+.shop_now h2 {
+  margin-right: 40px;
+  font-size: 1rem;
+  letter-spacing: 0.5rem;
+  font-weight: 500;
+}
+
+.shop_now:hover svg path {
+  fill: var(--Dark-gray);
+}
+
+.shop_now h2 a,.hamburger_nav li a{
+  color: var(--Black);
+}
+
+.shop_now h2 a:hover{
+  color: var(--Dark-gray)  ;
+}
+
+.slide_navigator {
+  position: absolute;
+  background: var(--Black);
+  bottom: 0;
+  left: 0;
+  width: calc(100% - 440px);
+}
+
+.left_arrow,
+.right_arrow {
+  padding: 20px;
+  width: 100%;
+  justify-content: center;
+}
+
+.left_arrow:hover,
+.right_arrow:hover {
+  background: var(--Very-dark-gray);
+}
+
+.about_info {
+  padding: 0 100px;
+  max-height: 100%;
+}
+
+.about_info h2 {
+  margin-bottom: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.about img {
+  height: 100%;
+}
+
+/* responsiveness */
+@media (max-width: 1250px) {
+  .showcase,
+  .about {
+    flex-direction: column;
+  }
+
+  .left_arrow,
+  .right_arrow,
+  .showcase,
+  .about {
+    height: 100%;
+  }
+
+  .image_slides,
+  .info_slides,
+  .about img {
+    width: 100%;
+  }
+
+  .image_slides {
+    height: 380px;
+  }
+
+  .info_slides,
+  .about_info {
+    padding: 50px 30px;
+  }
+
+  .slide_navigator {
+    height: 80px;
+    transform: translateX(150%);
+    width: 40%;
+    top: 0;
+    margin-top: -80px;
+  }
+}
+
+@media (max-width: 550px) {
+  .image_slides {
+    background: url("./images/mobile-image-hero-1.jpg") center center / cover
+      no-repeat;
+  }
+
+  .hamburger_menu,
+  .hamburger_icon,
+  .dummy_div {
+    display: flex;
+  }
+
+  .hamburger_menu {
+    width: 100%;
+    height: 0px;
+    overflow-y: hidden;
+  }
+
+  .hamburger_menu.show {
+    height: 100px;
+    padding-left: 30px;
+    overflow-y: visible;
+  }
+
+  .hamburger_nav li a {
+    font-weight: 500;
+  }
+
+  .menu-toggle:hover {
+    transform: scale(0.9);
+  }
+
+  .hamburger_icon.hide,
+  .logo.hide {
+    opacity: 0;
+  }
+
+  nav {
+    justify-content: space-between;
+    margin: 50px 30px 0;
+  }
+
+  .nav_links {
+    display: none;
+  }
+}
+
+@media (max-width: 430px) {
+  nav {
+    margin: 50px 15px 0;
+  }
+
+  .hamburger_menu.show {
+    padding-left: 15px;
+  }
+}
+
+@media (min-width: 1250px) and (max-width: 1400px) {
+  .about_info {
+    padding: 20px;
+  }
+}
+
+@media (min-width: 1250px) and (max-width: 1360px) {
+  .info_slides {
+    padding: 90px 100px;
+  }
+
+  .slide_navigator {
+    flex-direction: column;
+  }
+
+  .about_info {
+    padding: 40px 20px 0;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 1250px) {
+  .image_slides{
+    height: 670px;
+  }
+
+  .info_slides {
+    padding: 100px;
+  }
+
+  nav {
+    margin-left: 100px;
+  }
+
+  .about_info {
+    padding: 150px 100px;
+  }
+
+  .about_info h2{
+    font-size: 1.4rem;
+  }
+}
